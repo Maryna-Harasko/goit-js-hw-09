@@ -46,7 +46,7 @@ function startTimer(){
     const timerId = setInterval(() => {
       if (delta > 1000){
         delta -= 1000;
-        const timeObj = convertTime(delta);
+        const timeObj = convertMs(delta);
         timerStart(timeObj); 
       }
      else {
@@ -55,7 +55,7 @@ function startTimer(){
     }, 1000)
   }
 
-function convertTime(event) {
+function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
@@ -63,13 +63,13 @@ function convertTime(event) {
   const day = hour * 24;
 
   // Remaining days
-  const days = Math.floor(event / day);
+  const days = Math.floor(ms / day);
   // Remaining hours
-  const hours = Math.floor((event % day) / hour);
+  const hours = Math.floor((ms % day) / hour);
   // Remaining minutes
-  const minutes = Math.floor(((event % day) % hour) / minute);
+  const minutes = Math.floor(((ms % day) % hour) / minute);
   // Remaining seconds
-  const seconds = Math.floor((((event % day) % hour) % minute) / second);
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
 }
