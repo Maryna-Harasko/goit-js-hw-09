@@ -22,9 +22,9 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         console.log(selectedDates[0]);
-        const currentDay = Date.now();
+        let currentDay = Date.now();
         selectedDate = selectedDates[0].getTime();
-        timerTime = selectedDate - currentDay;
+        let timerTime = selectedDate - currentDay;
         console.log(selectedDate);
         if(timerTime <= 0){
           Notify.failure("Please choose a date in the future");
