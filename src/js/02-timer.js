@@ -22,7 +22,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         console.log(selectedDates[0]);
-        let currentDay = Date.now();
+        const currentDay = Date.now();
         selectedDate = selectedDates[0].getTime();
         let timerTime = selectedDate - currentDay;
         console.log(selectedDate);
