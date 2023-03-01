@@ -23,7 +23,7 @@ const options = {
     onClose(selectedDates) {
         console.log(selectedDates[0]);
         const currentDay = Date.now();
-        const selectedDate = selectedDates[0].getTime();
+        selectedDate = selectedDates[0].getTime();
         let timerTime = selectedDate - currentDay;
         console.log(selectedDate);
         if(timerTime <= 0){
